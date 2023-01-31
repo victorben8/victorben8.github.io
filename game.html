@@ -11,19 +11,26 @@
 <link rel="stylesheet" href="game.css" />
 
 <script>
-
-let game_data;
-
-function game (data)
-{
-	game_data = data;
-	
-	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de terror definitivo.</p>";
-	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[0].name+". ¿Qué quieres hacer?</p>";
-}
-
-fetch("https://rafaenti.github.io/game.json").then(response => response.json()).then(data => game(data));
-</script>
+		
+			let game_data;
+			let current_room = 0;
+			let items_picked = [];
+			let command = [];
+			
+			function execute_command () {
+				command = document.getElementById("commands").value.split(" ");
+				console.log(command);
+			}
+		
+			function game (data) {
+				game_data = data;
+				
+				document.getElementById("terminal").innerHTML = "<p><strong>¡Benvenido a ENTIerrame!</strong> El juego de terror definitivo.</p>";
+				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " + data.rooms[current_room].name + ". ¿Qué quieres hacer?</p>";
+			}
+		
+			fetch("https://victorben8.github.io/game.json").then(response => response.json()).then(data => game(data));
+		</script>
 
 </head>
 <body>
