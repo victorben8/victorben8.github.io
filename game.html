@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Víctor Benítez Fernández, página de ENTI (M4UF1): Portada</title>
+		<title>Víctor Benítez Fernández, página de ENTI M4UF1: Página principal</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
@@ -26,12 +26,12 @@
 				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " + data.rooms[current_room].name + ". ¿Qué quieres hacer?</p>";
 			}
 		
-			fetch("https://victorben8.github.io/game.json").then(response => response.json()).then(data => game(data));
+			fetch("https://alejandroenti.github.io/game.json").then(response => response.json()).then(data => game(data));
 		</script>
 	</head>
 	<body>
 		<header>
-			<h1>Víctor Benítez Fernández, página de ENTI (M4UF1)</h1>
+			<h1>Víctor Benítez Fernández, página de ENTI M4UF1</h1>
 			<nav>
 				<ul id="main-menu">
 					<li id="menu-presentation"><a href="index.html">Presentación</a></li>
@@ -57,7 +57,7 @@
 			</aside>
 		</main>
 		<footer>
-			<p>Víctor Benítez Fernández(c) <span id="footer-year">2022</span></p>
+			<p>Víctor Benítez Fernández<span id="footer-year">2022</span></p>
 			<script>
 				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 			</script>
