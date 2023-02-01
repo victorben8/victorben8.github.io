@@ -27,12 +27,12 @@ function game (data)
 
 function parseCommand(command)
 {
-
+	console.log("El comando ", command);
 }
 
 function parseInstruction(instruction)
 {
-
+	console.log("La instrucción", instruction);
 }
 
 function readAction ()
@@ -43,16 +43,15 @@ function readAction ()
 	let data = instruction.split(" ");
 	
 	if (data.length == 0) {
-		document.getElementById("terminal").innerHTML += "<p><strong>Error</strong> escribe una instrucción"</p>;
+		document.getElementById("terminal").innerHTML += "<p><strong>Error</strong> escribe una instrucción</p>";
 		return;
-		
+	}	
 	if (data.length == 1){
 		parseCommand(data[0]);
 	}
 	else{
 		parseInstruction(data);
 	}
-	
 	
 	let command = document.getElementById("commands").value;
 
