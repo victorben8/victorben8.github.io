@@ -1,66 +1,70 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Víctor Benítez Fernández, página de ENTI M4UF1: Página principal</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="style.css"/>
-		<link rel="stylesheet" href="game.css"/>
-		<script>
-		
-			let game_data;
-			let current_room = 0;
-			let items_picked = [];
-			let command = [];
-			
-			function execute_command () {
-				command = document.getElementById("commands").value.split(" ");
-				console.log(command);
-			}
-		
-			function game (data) {
-				game_data = data;
-				
-				document.getElementById("terminal").innerHTML = "<p><strong>¡Benvenido a ENTIerrame!</strong> El juego de terror definitivo.</p>";
-				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " + data.rooms[current_room].name + ". ¿Qué quieres hacer?</p>";
-			}
-		
-			fetch("https://victorben8.github.io/game.json").then(response => response.json()).then(data => game(data));
-		</script>
-	</head>
-	<body>
-		<header>
-			<h1>Víctor Benítez Fernández, página de ENTI M4UF1</h1>
-			<nav>
-				<ul id="main-menu">
-					<li id="menu-presentation"><a href="index.html">Presentación</a></li>
-					<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
-					<li id="menu-contact"><a href="contact.html">Contacto</a></li>
-					<li id="menu-cv"><a href="cv.html">CV</a></li>
-					<li id="menu-game"><a href="game.html">Juego</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<article>
-				<h2>Juegaco</h2>
-				<form>
-					<div id="terminal">
-					</div>
-					<input type="text" name="commands" id="commands"/>
-					<input type="submit" value="Ejecutar" id="submit-command" onclick="execute_command(); return false;"/>
-				</form>
-			</article>
-			<aside>
-				<h2>Aside</h2>
-			</aside>
-		</main>
-		<footer>
-			<p>Víctor Benítez Fernández (Copyright) <span id="footer-year">2022</span></p>
-			<script>
-				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-			</script>
-		</footer>
-	</body>
-</html>
+<html><head>
+<title>Víctor Benítez Fernández, página de ENTI M4UF1. juego</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&amp;family=Ubuntu:ital,wght@0,300;0,700;1,300&amp;display=swap" rel="stylesheet"> 
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="game.css">
+
+<script>
+
+let game_data;
+
+function game (data)
+{
+	game_data = data;
+	
+	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de terror definitivo.</p>";
+	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[0].name+". ¿Qué quieres hacer?</p>";
+}
+
+fetch("https://victorben8.github.io/game.json").then(response => response.json()).then(data => game(data));
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>Víctor Benítez Fernández, página de ENTI M4UF1</h1>
+<nav>
+<ul id="main-menu">
+<li id="menu-presentation"><a href="index.html">Presentación</a></li>
+<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
+<li id="menu-contact"><a href="contact.html">Contacto</a></li>
+<li id="menu-cv"><a href="cv.html">CV</a></li>
+<li id="menu-game"><a href="game.html">Game</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<article>
+<h2>Juegaco</h2>
+
+<form>
+<div id="terminal"><p><strong>¡Bienvenidos a ENTIerrame!</strong> El juego de terror definitivo.</p><p>Te encuentras en Parking de ENTI. ¿Qué quieres hacer?</p></div>
+<input type="text" id="commands">
+<input type="submit" value="Acción">
+</form>
+</article>
+
+<aside>
+<h2>Lateral</h2>
+<p>Ejemplo de menú lateral</p>
+</aside>
+
+</main>
+
+<footer>
+<p>Rafa Laguna (c) <span id="footer-year">2023</span></p>
+<script>
+	document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+</script>
+</footer>
+
+
+</body></html>
