@@ -1,40 +1,58 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Víctor Benítez Fernández, página de ENTI M4UF1: Portada</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="style.css"/>
+		<title>ENTI Survivors</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js" integrity="sha512-kg6fSrg6FkD9Ua02PzuA289KatVkTp6HdiFrSKwnz1bKBeKe5JG54rNeYZeghYO/I4ka49rb9H/9Ezcq9Se3iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</head>
 	<body>
-		<header>
-			<h1>Víctor Benítez Fernández, página de ENTI M4UF1</h1>
-			<nav>
-				<ul id="main-menu">
-					<li id="menu-presentation"><a href="index.html">Presentación</a></li>
-					<li id="menu-hobbies"><a href="hobbies.html">Hobbies</a></li>
-					<li id="menu-contact"><a href="contact.html">Contacto</a></li>
-					<li id="menu-cv"><a href="cv.html">CV</a></li>
-					<li id="menu-game"><a href="game.html">Juego</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<article>
-				<h2>Artículo</h2>
-				<p>Ejemplo de contenido</p>
-			</article>
-			<aside>
-				<h2>Aside</h2>
-				<p>Ejemplo de menú lateral</p>
-			</aside>
-		</main>
-		<footer>
-			<p> Víctor Benítez Fernández <span id="footer-year">2022</span></p>
-			<script>
-				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-			</script>
-		</footer>
+		<h1>ENTI Survivors</h1>
+		<script>
+
+			const config = {
+				width: 960,
+				height: 540,
+				scene: {
+					preload: precarga,
+					create: crear,
+					update: actualiza
+				}
+			};
+
+			const game = new Phaser.Game(config);
+			
+			let player;
+
+			function precarga () {
+
+				this.load.image("player", "imgs/player.jpeg");
+
+			}
+
+			function crear () {
+
+				this.player = this.add.image(64, 64, "player");
+				this.cursors = this.input.keyboard.createCursorKeys();
+				
+			}
+			
+			function actualiza () {
+
+
+				if (this.cursors.left.isDown) {
+					player.setVelocityX(-100);
+				}
+				else if (this.cursors.right.isDown) {
+					player.setVelocityX(100);
+				}
+				else if (this.cursors.up.isDown) {
+					player.setVelocityY(-100);
+				}
+				else if (this.cursors.down.isDown) {
+					player.setVelocityY(100);
+				}
+			
+			}
+
+		</script>
 	</body>
 </html>
