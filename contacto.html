@@ -1,16 +1,18 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-<title>Presentación</title>
+<title>Contacto</title>
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="base.css"/>
-<link rel="stylesheet" href="presentation.css"/>
+<link rel="stylesheet" href="contact.css"/>
 </head>
 <body>
+
 <header>
 <h1>Víctor Benítez Fernández ENTI M4UF1</h1>
 <nav>
@@ -23,22 +25,29 @@
 </ul>
 </nav>
 </header>
-
 <main>
-<article>
-<h2>Juegaco</h2>
-<form>
-<div>
-<p> ¿Que quieres hacer? </p>
-</div>
-<section id="input-player">
-<input type="text" name="commands" id="commands"/>
-<input type="submit" value="Ejecutar" id="submit-command" onclick="executeCommand(); return false;"/>
-</section>
+<h2>Contacto</h2>
+<form method="POST">
+<p><label for="name"> Nombre: </label><input type="text" name="name" id="name" placeholder="Nombre"></p>
+<p><label for="company"> Empresa: </label><input type="text" name="company" id="company" placeholder="Empresa"></p>
+<p><label for="email"> E-mail: </label><input type="email" name="email" id="email" placeholder="E-mail"></p>
+<p><label for="country"> País: </label><select name="country" id="country">
+<option value="Andorra">Andorra</option>
+<option value="Andorra">Alemania</option>
+<option value="China">China</option>
+<option value="China">ESPAÑA</option>
+<option value="China">Japón</option>
+					
+</select></p>
+		
+<p><input type="submit" name="send" id="submit-button"onclick="formSubmit(); return false;" value="Enviar"></p>
+<script>
+formSubmit = () => {
+alert("Esto es un ejercicio de clase, no se va a enviar")
+}
+</script>
 </form>
-</article>
 </main>
-
 <footer>
 <p>Víctor Benítez Fernández <span id="footer-year">2022</span></p>
 <script>
@@ -46,6 +55,5 @@ document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 </script>
 <ul>
 </footer>
-
 </body>
 </html>

@@ -7,7 +7,7 @@ h2 {
 	font-size: 48px;
 }
 
-form {
-	width: 60%;
-	padding: 0 0 0 20%;
+form p {
+	text-align: center;
+	display: flex;
 }

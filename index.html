@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>ENTI Survivors</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.55.2/phaser.min.js" integrity="sha512-kg6fSrg6FkD9Ua02PzuA289KatVkTp6HdiFrSKwnz1bKBeKe5JG54rNeYZeghYO/I4ka49rb9H/9Ezcq9Se3iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	</head>
-	<body>
-		<h1>ENTI Survivors</h1>
-		<script>
+<head>
+<title>Presentación</title>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="base.css"/>
+<link rel="stylesheet" href="presentation.css"/>
+</head>
+<body>
+<header>
+<h1>Víctor Benítez Fernández ENTI M4UF1</h1>
+<nav>
+<ul id="main-menu">
+<li id="menu-presentation"><a href="index.html">Presentación</a></li>
+<li id="menu-hobbies"><a href="aficiones.html">Aficiones</a></li>
+<li id="menu-contact"><a href="contacto.html">Contacto</a></li>
+<li id="menu-game"><a href="game.html">Juego</a></li>
 
-			const config = {
-				width: 960,
-				height: 540,
-				scene: {
-					preload: precarga,
-					create: crear,
-					update: actualiza
-				}
-			};
+</ul>
+</nav>
+</header>
 
-			const game = new Phaser.Game(config);
-			
-			let player;
+<main>
+<section>
+<h2>Quien soy</h2>
+<p class="body-text">Buenas a todos, soy Víctor Benítez Fernández, un chaval al que siempre le han apasionado los videojuegos, la música y la animación. He estudiado el grado de SMX, en el instituto IES Esteve Terradas, y actualmente estoy cursando en DAM-VIOD, en ENTI-UB.</p>
+<img src="https://media.licdn.com/dms/image/D4D03AQGuXcJruQPMtA/profile-displayphoto-shrink_200_200/0/1676243669936?e=1683763200&v=beta&t=AKpcf0taJu1vJdnIgjmmf0oIwWt7IBuQARtsKzyM3nc">
 
-			function precarga () {
+<article>
+<h2>Redes sociales: </h2>
 
-				this.load.image("player", "imgs/player.jpeg");
+<p><a href ="https://www.instagram.com/victorbennn8/">Instagram</a></p>
+<p><a href ="https://es.linkedin.com/in/v%C3%ADctor-ben%C3%ADtez-fern%C3%A1ndez-aa0b6b255?trk=people-guest_people_search-card">Linkedin</a></p>
 
-			}
+<main>
+<footer>
+<p>Víctor Benítez Fernández <span id="footer-year">2022</span></p>
+<script>
+document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+</script>
+<ul>
+</footer>
 
-			function crear () {
-
-				this.player = this.add.image(64, 64, "player");
-				this.cursors = this.input.keyboard.createCursorKeys();
-				
-			}
-			
-			function actualiza () {
-
-
-				if (this.cursors.left.isDown) {
-					player.setVelocityX(-100);
-				}
-				else if (this.cursors.right.isDown) {
-					player.setVelocityX(100);
-				}
-				else if (this.cursors.up.isDown) {
-					player.setVelocityY(-100);
-				}
-				else if (this.cursors.down.isDown) {
-					player.setVelocityY(100);
-				}
-			
-			}
-
-		</script>
-	</body>
+</body>
 </html>

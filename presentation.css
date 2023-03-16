@@ -1,0 +1,10 @@
+h2{
+	text-align: center;
+	font-size: 48px;
+}
+
+#about-me figure {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
